@@ -27,8 +27,8 @@ console.log(salarySum);
 
 // 3. Write the isObject function. Use the typeof operator.
 
-function isObject(valueType) {
-    return typeof valueType === 'object' && valueType !== null;
+function isObject(object) {
+    return typeof object === 'object' && object !== null;
 }
 
 console.log(isObject({})); // true
