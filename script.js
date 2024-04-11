@@ -36,3 +36,5 @@ console.log(isObject(10)); // false
 console.log(isObject(null)); // false
 
 // 4. In the separate file.
+
+// 5. In the separate file.
