@@ -26,5 +26,5 @@ function checkIfUsersHaveTheSameName(firstObject, secondObject) {
 
 }
 
-checkIfUsersHaveTheSameName(firstJohn, secondJohn); // true
-checkIfUsersHaveTheSameName(firstJohn, adam); // false
+console.log(checkIfUsersHaveTheSameName(firstJohn, secondJohn)); // true
+console.log(checkIfUsersHaveTheSameName(firstJohn, adam)); // false
