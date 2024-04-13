@@ -100,8 +100,8 @@ const animal = {
     color: 'white'
 }
 
-function getAnimalInformation(obj){
-    return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+function getAnimalInformation(object){
+    return `This ${object.color} ${object.name} has ${object.legs} legs.`
 }
 
 console.log(getAnimalInformation(animal));
