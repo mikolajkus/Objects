@@ -151,3 +151,5 @@ console.log(contacts === contactsWithJohn); // false
 console.log(contacts.John); // undefined
 
 // 13. In the separate file.
+
+// 14. In the separate file.
