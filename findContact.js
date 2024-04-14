@@ -11,10 +11,7 @@ function addContact(object, name, phoneNumber) {
 }
 
 function findContact(object, name) {
-    const contactInfo = object[name];
-    if (contactInfo) {
-        return `Name: ${contactInfo.name}, Phone: ${contactInfo.phoneNumber}`;
-    }
+        return `Name: ${object[name].name}, Phone: ${object[name].phoneNumber}`;
 }
 
 const contactsObject = {};
