@@ -10,15 +10,15 @@ function addContact(object, name, phoneNumber) {
     }
 }
 
-function findContact(contact, name) {
-    const contactInfo = contact[name];
+function findContact(object, name) {
+    const contactInfo = object[name];
     if (contactInfo) {
-        return `Name: ${contactInfo.name}}, Phone: ${contactInfo.phoneNumber}`;
+        return `Name: ${contactInfo.name}, Phone: ${contactInfo.phoneNumber}`;
     }
 }
 
-const contacts = {};
-const contactsWithJohn = addContact(contacts, 'John', '123 456 789');
+const contactsObject = {};
+const informationAboutJohn = addContact(contactsObject, 'John', '123 456 789');
 
-const johnContactInfo = findContact(contactsWithJohn, 'John');
+const johnContactInfo = findContact(informationAboutJohn, 'John');
 console.log(johnContactInfo); // "Name: John, Phone: 123 456 789"
