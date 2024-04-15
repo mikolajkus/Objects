@@ -1,17 +1,19 @@
 // 13. Write the findContact function that returns a string representing the contact with a given name.
 // If a contact with a given name does not exist, return undefined.
 
-function addContact(object, name, phoneNumber) {
+function addContact(contactToPerson, name, phoneNumber) {
     return {
-        John: {
+        ...contactToPerson,
+        [name]: {
             name: name,
             phoneNumber: phoneNumber
         }
     }
 }
 
-function findContact(object, name) {
-        return `Name: ${object[name].name}, Phone: ${object[name].phoneNumber}`;
+function findContact(contactToPerson, name) {
+    const informationAboutPerson = contactToPerson[name];
+    return `Name: ${informationAboutPerson.name}, Phone: ${informationAboutPerson.phoneNumber}`;
 }
 
 const contactsObject = {};

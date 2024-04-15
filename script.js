@@ -27,8 +27,8 @@ console.log(salarySum);
 
 // 3. Write the isObject function. Use the typeof operator.
 
-function isObject(object) {
-    return typeof object === 'object' && object !== null;
+function isObject(data) {
+    return typeof data === 'object' && data !== null;
 }
 
 console.log(isObject({})); // true
@@ -41,13 +41,13 @@ console.log(isObject(null)); // false
 
 // 6. Write the getVoteCount function.
 
-function getVoteCount (votes) {
-    return votes.upVotes - votes.downVotes;
+function getVoteCount(votes) {
+    return votes.upvotes - votes.downvotes;
 }
 
-console.log(getVoteCount({ upVotes: 10, downVotes: 5 })); // 5
-console.log(getVoteCount({ upVotes: 75, downVotes: 90 })); // -15
-console.log(getVoteCount({ upVotes: 50, downVotes: 50 })); // 0
+console.log(getVoteCount({ upvotes: 10, downvotes: 5 })); // 5
+console.log(getVoteCount({ upvotes: 75, downvotes: 90 })); // -15
+console.log(getVoteCount({ upvotes: 50, downvotes: 50 })); // 0
 
 // 7. Write the getCubeVolume function.
 
@@ -100,8 +100,8 @@ const animal = {
     color: 'white'
 }
 
-function getAnimalInformation(object){
-    return `This ${object.color} ${object.name} has ${object.legs} legs.`
+function getAnimalInformation(animal){
+    return `This ${animal.color} ${animal.name} has ${animal.legs} legs.`
 }
 
 console.log(getAnimalInformation(animal));
@@ -132,20 +132,24 @@ console.log(rooms);
 // The new property should contain an object with the name  and phoneNumber  properties.
 // Make sure not to modify the contacts provided as an argument to the addContact function.
 
-function addContact(object, name, phoneNumber) {
+function addContact(contactToPerson, contactName, phoneNumber) {
     return {
-        John: {
-            name: name,
-            phoneNumber: phoneNumber
+        ...contactToPerson,
+        [contactName]: {
+            name: contactName,
+            phoneNumber: phoneNumber,
         }
     }
 }
 
 const contacts = {};
 const contactsWithJohn = addContact(contacts, 'John', '123 456 789');
+const contactsWithJohnAndKate =  addContact(contactsWithJohn, 'Kate', '321 654 987');
 
 console.log(contactsWithJohn.John.name); // "John"
 console.log(contactsWithJohn.John.phoneNumber); // '123 456 789'
+
+console.log(contactsWithJohnAndKate);
 
 console.log(contacts === contactsWithJohn); // false
 console.log(contacts.John); // undefined
