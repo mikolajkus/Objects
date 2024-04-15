@@ -29,22 +29,28 @@ const car = {
     }
 }
 
-function validateIfObjectIsAUser(object) {
-    if (
+function checkIfObjectHasUserProperties(object) {
+    return (
         typeof object.firstName === 'string' &&
         typeof object.lastName === 'string' &&
         typeof object.age === 'number' &&
         typeof object.greet === 'function'
-    ) {
-        const greeting = object.greet();
-        if (typeof greeting === 'string' &&
-            greeting.includes(object.firstName) &&
-            greeting.includes(object.lastName)
-        ) {
-           return true;
-        }
+    )
+}
+
+function checkUserGreeting(object) {
+    const greeting = object.greet();
+    return (typeof greeting === 'string' &&
+        greeting.includes(object.firstName) &&
+        greeting.includes(object.lastName)
+        )
+}
+
+function validateIfObjectIsAUser(object) {
+    if (!checkIfObjectHasUserProperties(object)) {
+        return false;
     }
-    return false;
+    return checkUserGreeting(object);
 }
 
 console.log(validateIfObjectIsAUser(userObject)); // true
