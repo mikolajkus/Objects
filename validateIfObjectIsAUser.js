@@ -38,20 +38,19 @@ function checkIfObjectHasUserProperties(object) {
     )
 }
 
-function checkUserGreeting(object) {
-    const greeting = object.greet();
+function checkUserGreeting(greeting, firstName, lastName) {
     return (
         typeof greeting === 'string' &&
-        greeting.includes(object.firstName) &&
-        greeting.includes(object.lastName)
-        )
+        greeting.includes(firstName) &&
+        greeting.includes(lastName)
+    )
 }
 
 function validateIfObjectIsAUser(object) {
     if (!checkIfObjectHasUserProperties(object)) {
         return false;
     }
-    return checkUserGreeting(object.greet());
+    return checkUserGreeting(object.greet(), object.firstName, object.lastName);
 }
 
 console.log(validateIfObjectIsAUser(userObject)); // true
