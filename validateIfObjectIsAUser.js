@@ -40,7 +40,8 @@ function checkIfObjectHasUserProperties(object) {
 
 function checkUserGreeting(object) {
     const greeting = object.greet();
-    return (typeof greeting === 'string' &&
+    return (
+        typeof greeting === 'string' &&
         greeting.includes(object.firstName) &&
         greeting.includes(object.lastName)
         )
@@ -50,7 +51,7 @@ function validateIfObjectIsAUser(object) {
     if (!checkIfObjectHasUserProperties(object)) {
         return false;
     }
-    return checkUserGreeting(object);
+    return checkUserGreeting(object.greet());
 }
 
 console.log(validateIfObjectIsAUser(userObject)); // true
