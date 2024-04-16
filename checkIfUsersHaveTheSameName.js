@@ -16,14 +16,10 @@ const adam = {
 }
 
 function checkIfUsersHaveTheSameName(firstObject, secondObject) {
-    if (
+    return !(
         (firstObject.firstName !== secondObject.firstName) ||
         (firstObject.lastName !== secondObject.lastName)
-    ) {
-        return false;
-    }
-    return true;
-
+    )
 }
 
 console.log(checkIfUsersHaveTheSameName(firstJohn, secondJohn)); // true
